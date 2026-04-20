@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Restaurant Recommender</title>
-    <style>
-        body {
-            background-image: url("img.jpg");
-            background-size: cover;
-            background-position: center;
-            color:black;
-            text-align: center;
-            padding: 50px; /* Adjust as needed */
-        }
-
-    </style>
+    <title>Restaurant Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Restaurant Recommendation System</h1>
-    <br>
-    <form action="/recommend" method="post">
-        <label for="restaurant">Enter Restaurant Name:</label>
-        <input type="text" id="restaurant" name="restaurant" required>
-        <button type="submit">Get Recommendations</button>
-    </form>
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to Restaurant Recommendation System</h1>
+            <p>Discover your next favorite dining experience based on your preferences</p>
+        </div>
+        <div class="search-form">
+            <h2>Find Similar Restaurants</h2>
+            <form action="/recommend" method="post">
+                <div class="form-group">
+                    <label for="restaurant">Enter Restaurant Name:</label>
+                    <input type="text" id="restaurant" name="restaurant" required placeholder="e.g., Domino's Pizza">
+                </div>
+                <button type="submit" class="btn">Get Recommendations</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
